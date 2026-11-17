@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Episode-Onset Examples</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: two matched columns, positives left and negatives right, so rows read as side-by-side comparisons */
+:root {
+  --bg: #f7f8f7; --panel: #ffffff; --ink: #121614; --ink-2: #4c5450; --ink-3: #7c8580; --rule: #dfe3e0;
+  --pos: #2a78d6; --neg: #eb6834;
+  --display: "Space Grotesk", "IBM Plex Sans", system-ui, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #141716; --panel: #1b1f1d; --ink: #eef0ee; --ink-2: #b7bfba; --ink-3: #87908b; --rule: #2e3431;
+  --pos: #3987e5; --neg: #d95926; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #141716; --panel: #1b1f1d; --ink: #eef0ee; --ink-2: #b7bfba; --ink-3: #87908b; --rule: #2e3431;
+  --pos: #3987e5; --neg: #d95926; color-scheme: dark }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 14px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 56px; }
+main { max-width: 1600px; margin: 0 auto; display: grid; gap: 22px; }
+header { display: grid; gap: 8px; }
+h1, h2 { font-family: var(--display); font-weight: 600; margin: 0; text-wrap: balance; }
+h1 { font-size: 28px; }
+h2 { font-size: 18px; display: flex; align-items: center; gap: 8px; }
+h2 i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+p { margin: 0; max-width: 84ch; color: var(--ink-2); }
+.eyebrow, .mono { font-family: var(--mono); }
+.eyebrow { font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.facts { display: flex; flex-wrap: wrap; gap: 4px 18px; font-family: var(--mono); font-size: 12.5px; color: var(--ink-2); }
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; align-items: start; }
+.col { display: grid; gap: 14px; min-width: 0; }
+figure { margin: 0; background: var(--panel); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+figure img { display: block; width: 100%; height: auto; background: #fff; }
+figcaption { display: grid; gap: 2px; padding: 8px 12px 10px; font-size: 12.5px; color: var(--ink-2); }
+figcaption .mono { font-size: 11.5px; color: var(--ink-3); }
+@media (max-width: 760px) { .cols { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <span class="eyebrow">es-efed4657076c · easy-same-sex · start_to_chase v4 (episode onsets)</span>
+    <h1>Episode-Onset Examples</h1>
+    <p>Twenty positives and twenty negatives drawn at random (seed 0) from the rebuilt set. Each positive onset has been moved back to the start of its chase episode: short JAABA chase flickers within 1 s before a bout now belong to the bout, so the second before every onset has no raw chase. Negatives have no raw chase anywhere in the ±1 s window.</p>
+    <p>Each clip runs from 1 s before to 1 s after the onset at about half speed. Green is the actor, orange the partner, grey the other flies. The three bars along the bottom are the actor's JAABA chase, courtship (<span class="mono">courtship_v2pt3_apt</span>) and wing-extension (<span class="mono">wingextension_apt</span>) labels, all scored densely on the same archive.</p>
+    <div class="facts"><span>positives: 18/20 with actor courtship, 13/20 with wing extension</span><span>negatives: 2/20 with actor courtship, 2/20 with wing extension</span></div>
+  </header>
+  <div class="cols">
+    <section class="col"><h2><i style="background:var(--pos)"></i>Positives · chase onsets</h2>
+      <figure><img src="gifs/positive_v002_actor40_f18708.gif" alt="positive example, video 2 actor 40" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner female unknown</span>
+        <span class="mono">video 2 · actor 40 · onset 18708 · within ±1 s: chase 0.89 s, courtship 0.31 s, wing ext. 0.61 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v002_actor32_f37068.gif" alt="positive example, video 2 actor 32" loading="lazy" width="760" height="500">
+        <figcaption><span>male unknown → partner female pBDPGAL4U_control</span>
+        <span class="mono">video 2 · actor 32 · onset 37068 · within ±1 s: chase 0.99 s, courtship 0.63 s, wing ext. 0.20 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v009_actor100_f30421.gif" alt="positive example, video 9 actor 100" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner male R71G01</span>
+        <span class="mono">video 9 · actor 100 · onset 30421 · within ±1 s: chase 1.01 s, courtship 0.99 s, wing ext. 0.04 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v010_actor120_f29738.gif" alt="positive example, video 10 actor 120" loading="lazy" width="760" height="500">
+        <figcaption><span>male R65F12 → partner female R65F12</span>
+        <span class="mono">video 10 · actor 120 · onset 29738 · within ±1 s: chase 0.99 s, courtship 0.77 s, wing ext. 0.29 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v013_actor152_f39778.gif" alt="positive example, video 13 actor 152" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner female R71G01</span>
+        <span class="mono">video 13 · actor 152 · onset 39778 · within ±1 s: chase 0.99 s, courtship 0.71 s, wing ext. 0.08 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v021_actor226_f14922.gif" alt="positive example, video 21 actor 226" loading="lazy" width="760" height="500">
+        <figcaption><span>female pC1d → partner female pC1d</span>
+        <span class="mono">video 21 · actor 226 · onset 14922 · within ±1 s: chase 0.99 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v023_actor244_f40332.gif" alt="positive example, video 23 actor 244" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner male R71G01</span>
+        <span class="mono">video 23 · actor 244 · onset 40332 · within ±1 s: chase 1.01 s, courtship 1.47 s, wing ext. 0.28 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v049_actor488_f5876.gif" alt="positive example, video 49 actor 488" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner female R71G01</span>
+        <span class="mono">video 49 · actor 488 · onset 5876 · within ±1 s: chase 0.90 s, courtship 0.14 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v049_actor488_f59271.gif" alt="positive example, video 49 actor 488" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner male R71G01</span>
+        <span class="mono">video 49 · actor 488 · onset 59271 · within ±1 s: chase 0.78 s, courtship 0.41 s, wing ext. 0.23 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v049_actor487_f59885.gif" alt="positive example, video 49 actor 487" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner female R71G01</span>
+        <span class="mono">video 49 · actor 487 · onset 59885 · within ±1 s: chase 0.93 s, courtship 0.43 s, wing ext. 0.44 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v050_actor494_f1343.gif" alt="positive example, video 50 actor 494" loading="lazy" width="760" height="500">
+        <figcaption><span>male R65F12 → partner female pBDPGAL4U_control</span>
+        <span class="mono">video 50 · actor 494 · onset 1343 · within ±1 s: chase 0.95 s, courtship 1.09 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v052_actor521_f7140.gif" alt="positive example, video 52 actor 521" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner female R71G01</span>
+        <span class="mono">video 52 · actor 521 · onset 7140 · within ±1 s: chase 0.99 s, courtship 0.63 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v053_actor536_f12224.gif" alt="positive example, video 53 actor 536" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner female unknown</span>
+        <span class="mono">video 53 · actor 536 · onset 12224 · within ±1 s: chase 0.99 s, courtship 0.08 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v056_actor569_f5592.gif" alt="positive example, video 56 actor 569" loading="lazy" width="760" height="500">
+        <figcaption><span>male R20A02 → partner male R20A02</span>
+        <span class="mono">video 56 · actor 569 · onset 5592 · within ±1 s: chase 0.98 s, courtship 0.47 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v056_actor564_f23595.gif" alt="positive example, video 56 actor 564" loading="lazy" width="760" height="500">
+        <figcaption><span>male R20A02 → partner male R20A02</span>
+        <span class="mono">video 56 · actor 564 · onset 23595 · within ±1 s: chase 0.99 s, courtship 1.11 s, wing ext. 0.08 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v062_actor634_f3747.gif" alt="positive example, video 62 actor 634" loading="lazy" width="760" height="500">
+        <figcaption><span>male R20A02 → partner female pBDPGAL4U_control</span>
+        <span class="mono">video 62 · actor 634 · onset 3747 · within ±1 s: chase 0.25 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v063_actor643_f18172.gif" alt="positive example, video 63 actor 643" loading="lazy" width="760" height="500">
+        <figcaption><span>male R20A02 → partner female R20A02</span>
+        <span class="mono">video 63 · actor 643 · onset 18172 · within ±1 s: chase 0.84 s, courtship 0.47 s, wing ext. 0.02 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v063_actor650_f22061.gif" alt="positive example, video 63 actor 650" loading="lazy" width="760" height="500">
+        <figcaption><span>male R20A02 → partner female R20A02</span>
+        <span class="mono">video 63 · actor 650 · onset 22061 · within ±1 s: chase 0.96 s, courtship 0.49 s, wing ext. 0.12 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v065_actor661_f574.gif" alt="positive example, video 65 actor 661" loading="lazy" width="760" height="500">
+        <figcaption><span>male pBDPGAL4U_control → partner female pBDPGAL4U_control</span>
+        <span class="mono">video 65 · actor 661 · onset 574 · within ±1 s: chase 0.36 s, courtship 0.81 s, wing ext. 0.41 s</span></figcaption></figure>
+      <figure><img src="gifs/positive_v065_actor660_f17825.gif" alt="positive example, video 65 actor 660" loading="lazy" width="760" height="500">
+        <figcaption><span>male pBDPGAL4U_control → partner female pBDPGAL4U_control</span>
+        <span class="mono">video 65 · actor 660 · onset 17825 · within ±1 s: chase 0.24 s, courtship 0.53 s, wing ext. 0.97 s</span></figcaption></figure>
+    </section>
+    <section class="col"><h2><i style="background:var(--neg)"></i>Negatives · pseudo-onsets</h2>
+      <figure><img src="gifs/negative_v002_actor21_f1186.gif" alt="negative example, video 2 actor 21" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner female pBDPGAL4U_control</span>
+        <span class="mono">video 2 · actor 21 · onset 1186 · within ±1 s: chase 0.00 s, courtship 0.57 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v005_actor63_f41704.gif" alt="negative example, video 5 actor 63" loading="lazy" width="760" height="500">
+        <figcaption><span>male R91B01 → partner male R91B01</span>
+        <span class="mono">video 5 · actor 63 · onset 41704 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v006_actor69_f37592.gif" alt="negative example, video 6 actor 69" loading="lazy" width="760" height="500">
+        <figcaption><span>male R91B01 → partner female R91B01</span>
+        <span class="mono">video 6 · actor 69 · onset 37592 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v008_actor96_f9180.gif" alt="negative example, video 8 actor 96" loading="lazy" width="760" height="500">
+        <figcaption><span>male pBDPGAL4U_control → partner female pBDPGAL4U_control</span>
+        <span class="mono">video 8 · actor 96 · onset 9180 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v008_actor92_f12157.gif" alt="negative example, video 8 actor 92" loading="lazy" width="760" height="500">
+        <figcaption><span>male pBDPGAL4U_control → partner female pBDPGAL4U_control</span>
+        <span class="mono">video 8 · actor 92 · onset 12157 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v008_actor92_f26715.gif" alt="negative example, video 8 actor 92" loading="lazy" width="760" height="500">
+        <figcaption><span>male pBDPGAL4U_control → partner female pBDPGAL4U_control</span>
+        <span class="mono">video 8 · actor 92 · onset 26715 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v014_actor160_f16501.gif" alt="negative example, video 14 actor 160" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner male R71G01</span>
+        <span class="mono">video 14 · actor 160 · onset 16501 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v019_actor212_f5987.gif" alt="negative example, video 19 actor 212" loading="lazy" width="760" height="500">
+        <figcaption><span>male pBDPGAL4U_control → partner male pBDPGAL4U_control</span>
+        <span class="mono">video 19 · actor 212 · onset 5987 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v023_actor242_f3628.gif" alt="negative example, video 23 actor 242" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner male R71G01</span>
+        <span class="mono">video 23 · actor 242 · onset 3628 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v023_actor249_f12838.gif" alt="negative example, video 23 actor 249" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner male R71G01</span>
+        <span class="mono">video 23 · actor 249 · onset 12838 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v043_actor428_f1956.gif" alt="negative example, video 43 actor 428" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner male R71G01</span>
+        <span class="mono">video 43 · actor 428 · onset 1956 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v043_actor427_f34413.gif" alt="negative example, video 43 actor 427" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner female R71G01</span>
+        <span class="mono">video 43 · actor 427 · onset 34413 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v043_actor427_f35015.gif" alt="negative example, video 43 actor 427" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner male R71G01</span>
+        <span class="mono">video 43 · actor 427 · onset 35015 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v053_actor542_f29706.gif" alt="negative example, video 53 actor 542" loading="lazy" width="760" height="500">
+        <figcaption><span>male R71G01 → partner female pBDPGAL4U_control</span>
+        <span class="mono">video 53 · actor 542 · onset 29706 · within ±1 s: chase 0.00 s, courtship 0.13 s, wing ext. 0.59 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v054_actor545_f8359.gif" alt="negative example, video 54 actor 545" loading="lazy" width="760" height="500">
+        <figcaption><span>male R20A02 → partner female R20A02</span>
+        <span class="mono">video 54 · actor 545 · onset 8359 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v054_actor547_f8894.gif" alt="negative example, video 54 actor 547" loading="lazy" width="760" height="500">
+        <figcaption><span>male R20A02 → partner male R20A02</span>
+        <span class="mono">video 54 · actor 547 · onset 8894 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v057_actor587_f30373.gif" alt="negative example, video 57 actor 587" loading="lazy" width="760" height="500">
+        <figcaption><span>male R65F12 → partner male R65F12</span>
+        <span class="mono">video 57 · actor 587 · onset 30373 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v060_actor621_f5869.gif" alt="negative example, video 60 actor 621" loading="lazy" width="760" height="500">
+        <figcaption><span>female pC1d → partner female pC1d</span>
+        <span class="mono">video 60 · actor 621 · onset 5869 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v062_actor635_f30615.gif" alt="negative example, video 62 actor 635" loading="lazy" width="760" height="500">
+        <figcaption><span>male R20A02 → partner female pBDPGAL4U_control</span>
+        <span class="mono">video 62 · actor 635 · onset 30615 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.00 s</span></figcaption></figure>
+      <figure><img src="gifs/negative_v065_actor666_f1922.gif" alt="negative example, video 65 actor 666" loading="lazy" width="760" height="500">
+        <figcaption><span>male pBDPGAL4U_control → partner male pBDPGAL4U_control</span>
+        <span class="mono">video 65 · actor 666 · onset 1922 · within ±1 s: chase 0.00 s, courtship 0.00 s, wing ext. 0.05 s</span></figcaption></figure>
+    </section>
+  </div>
+</main>
+</body>
+</html>
